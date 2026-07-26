@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}
+Manage Doctors
+{% endblock %}
+
+{% block page_title %}
+Registered Doctors
+{% endblock %}
+
+{% block content %}
+
+<div class="card-box">
+
+<h2>
+
+Registered Doctors
+
+</h2>
+
+<hr>
+
+<div class="table-responsive">
+
+<table class="table table-striped table-bordered">
+
+<thead class="table-success">
+
+<tr>
+
+<th>ID</th>
+
+<th>Doctor Name</th>
+
+<th>Email</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for doctor in doctors %}
+
+<tr>
+
+<td>{{ doctor[0] }}</td>
+
+<td>{{ doctor[1] }}</td>
+
+<td>{{ doctor[2] }}</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+<a href="/admin"
+class="btn btn-success">
+
+Back to Dashboard
+
+</a>
+
+</div>
+
+{% endblock %}

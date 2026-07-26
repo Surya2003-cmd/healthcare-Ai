@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}
+Prediction Reports
+{% endblock %}
+
+{% block page_title %}
+Healthcare Prediction Reports
+{% endblock %}
+
+{% block content %}
+
+<div class="card-box">
+
+<div class="d-flex justify-content-between mb-3">
+
+<h2>
+
+Prediction Reports
+
+</h2>
+
+<button
+onclick="window.print()"
+class="btn btn-danger">
+
+<i class="bi bi-printer-fill"></i>
+
+Print
+
+</button>
+
+</div>
+
+<hr>
+
+<div class="table-responsive">
+
+<table class="table table-bordered table-hover">
+
+<thead class="table-danger">
+
+<tr>
+
+<th>ID</th>
+
+<th>User ID</th>
+
+<th>Disease</th>
+
+<th>Probability</th>
+
+<th>Result</th>
+
+<th>Date</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for report in reports %}
+
+<tr>
+
+<td>{{ report[0] }}</td>
+
+<td>{{ report[1] }}</td>
+
+<td>{{ report[2] }}</td>
+
+<td>{{ report[3] }}</td>
+
+<td>{{ report[4] }}</td>
+
+<td>{{ report[5] }}</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+<br>
+
+<a href="/admin"
+class="btn btn-primary">
+
+Back to Dashboard
+
+</a>
+
+</div>
+
+{% endblock %}

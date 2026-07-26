@@ -1,0 +1,11 @@
+Flask
+Flask-Login
+Flask-SQLAlchemy
+mysql-connector-python
+pandas
+numpy
+scikit-learn
+reportlab
+werkzeug
+openai>=1.68.0
+qrcode

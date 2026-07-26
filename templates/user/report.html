@@ -1,0 +1,304 @@
+{% extends "base.html" %}
+
+{% block title %}
+Medical Report
+{% endblock %}
+
+{% block page_title %}
+Healthcare Prediction Report
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-10">
+
+            <div class="card-box">
+
+                <div class="text-center mb-4">
+
+                    <i class="bi bi-file-earmark-medical-fill text-danger"
+                       style="font-size:70px;"></i>
+
+                    <h2 class="mt-3">
+
+                        Medical Prediction Report
+
+                    </h2>
+
+                    <p class="text-muted">
+
+                        AI Generated Healthcare Report
+
+                    </p>
+
+                </div>
+
+                <hr>
+
+                {% if not result %}
+
+                <div class="alert alert-warning text-center">
+
+                    <h5 class="mb-2">
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+                        No prediction report found
+                    </h5>
+
+                    <p class="mb-0">
+                        Please run a diabetes or heart disease prediction first,
+                        then come back to generate your medical report.
+                    </p>
+
+                </div>
+
+                {% endif %}
+
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <table class="table table-bordered">
+
+                            <tr>
+
+                                <th width="40%">Patient Name</th>
+
+                                <td>
+
+                                    {{ username if username else "Patient" }}
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Age</th>
+
+                                <td>
+
+                                    {{ age if age else "--" }}
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Disease</th>
+
+                                <td>
+
+                                    {{ disease if disease else "--" }}
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Prediction</th>
+
+                                <td>
+
+                                    {{ result.result if result else "--" }}
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>Probability</th>
+
+                                <td>
+
+                                    {% if result %}
+
+                                    {{ (result.probability*100)|round(2) }} %
+
+                                    {% else %}
+
+                                    --
+
+                                    {% endif %}
+
+                                </td>
+
+                            </tr>
+
+                        </table>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="alert alert-success">
+
+                            <h4>
+
+                                AI Recommendation
+
+                            </h4>
+
+                            <hr>
+
+                            <ul>
+
+                                <li>Maintain a healthy diet.</li>
+
+                                <li>Exercise regularly.</li>
+
+                                <li>Drink 2-3 litres of water daily.</li>
+
+                                <li>Avoid smoking and alcohol.</li>
+
+                                <li>Consult a doctor for regular check-ups.</li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <h3>
+
+                    Health Summary
+
+                </h3>
+
+                <p>
+
+                    This report has been generated using the
+                    <strong>Healthcare AI Prediction System.</strong>
+
+                    The prediction result is based on the data entered by the
+                    user and the trained Machine Learning model.
+
+                    This report is intended for educational purposes only and
+                    should not replace professional medical advice.
+
+                </p>
+
+                <hr>
+
+                <div class="row">
+
+                    <div class="col-md-4">
+
+                        <div class="card text-center border-primary">
+
+                            <div class="card-body">
+
+                                <i class="bi bi-heart-pulse-fill
+                                           text-primary"
+                                   style="font-size:45px;"></i>
+
+                                <h5 class="mt-3">
+
+                                    AI Prediction
+
+                                </h5>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="card text-center border-success">
+
+                            <div class="card-body">
+
+                                <i class="bi bi-cup-hot-fill
+                                           text-success"
+                                   style="font-size:45px;"></i>
+
+                                <h5 class="mt-3">
+
+                                    Diet Plan
+
+                                </h5>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="card text-center border-warning">
+
+                            <div class="card-body">
+
+                                <i class="bi bi-person-walking
+                                           text-warning"
+                                   style="font-size:45px;"></i>
+
+                                <h5 class="mt-3">
+
+                                    Exercise
+
+                                </h5>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="text-center">
+
+                    <a href="/predict"
+                       class="btn btn-primary">
+
+                        <i class="bi bi-arrow-repeat"></i>
+
+                        New Prediction
+
+                    </a>
+
+                    <a href="/user"
+                       class="btn btn-success">
+
+                        <i class="bi bi-house-fill"></i>
+
+                        Dashboard
+
+                    </a>
+
+                    <a href="/download_report"
+                       class="btn btn-danger">
+
+                        <i class="bi bi-file-earmark-pdf-fill"></i>
+
+                        Download PDF
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

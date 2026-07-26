@@ -1,0 +1,245 @@
+{% extends "base.html" %}
+
+{% block title %}
+User Dashboard
+{% endblock %}
+
+{% block page_title %}
+Welcome to Healthcare AI System
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- Welcome Card -->
+
+    <div class="card-box mb-4">
+
+        <h2>
+            Welcome,
+            {{ username if username else "User" }}
+            👋
+        </h2>
+
+        <p class="text-muted">
+
+            Manage your health using Artificial Intelligence.
+
+        </p>
+
+    </div>
+
+    <!-- Dashboard Cards -->
+
+    <div class="row g-4">
+
+        <div class="col-lg-4">
+
+            <div class="card-box text-center">
+
+                <div class="card-icon">
+
+                    <i class="bi bi-heart-pulse-fill"></i>
+
+                </div>
+
+                <h4>Disease Prediction</h4>
+
+                <p>
+
+                    Predict Diabetes and Heart Disease using AI.
+
+                </p>
+
+                <a href="/predict"
+                   class="btn btn-primary">
+
+                    Open
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="card-box text-center">
+
+                <div class="card-icon">
+
+                    <i class="bi bi-cup-hot-fill"></i>
+
+                </div>
+
+                <h4>Diet Recommendation</h4>
+
+                <p>
+
+                    Personalized diet suggestions.
+
+                </p>
+
+                <a href="/diet"
+                   class="btn btn-success">
+
+                    Open
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="card-box text-center">
+
+                <div class="card-icon">
+
+                    <i class="bi bi-person-walking"></i>
+
+                </div>
+
+                <h4>Physiotherapy</h4>
+
+                <p>
+
+                    AI-based exercise recommendations.
+
+                </p>
+
+                <a href="/physiotherapy"
+                   class="btn btn-warning">
+
+                    Open
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="card-box text-center">
+
+                <div class="card-icon">
+
+                    <i class="bi bi-robot"></i>
+
+                </div>
+
+                <h4>AI Chatbot</h4>
+
+                <p>
+
+                    Ask any healthcare-related questions.
+
+                </p>
+
+                <a href="/chatbot"
+                   class="btn btn-info">
+
+                    Chat Now
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="card-box text-center">
+
+                <div class="card-icon">
+
+                    <i class="bi bi-calendar-check-fill"></i>
+
+                </div>
+
+                <h4>Appointments</h4>
+
+                <p>
+
+                    Book appointments with doctors.
+
+                </p>
+
+                <a href="/appointment"
+                   class="btn btn-primary">
+
+                    Book
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="card-box text-center">
+
+                <div class="card-icon">
+
+                    <i class="bi bi-file-earmark-pdf-fill"></i>
+
+                </div>
+
+                <h4>Reports</h4>
+
+                <p>
+
+                    Download your healthcare reports.
+
+                </p>
+
+                <a href="/report"
+                   class="btn btn-danger">
+
+                    View
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Health Tips -->
+
+    <div class="card-box mt-5">
+
+        <h3>
+
+            <i class="bi bi-lightbulb-fill text-warning"></i>
+
+            Daily Health Tips
+
+        </h3>
+
+        <hr>
+
+        <ul>
+
+            <li>Drink at least 2–3 litres of water every day.</li>
+
+            <li>Exercise for at least 30 minutes.</li>
+
+            <li>Eat more fruits and vegetables.</li>
+
+            <li>Sleep 7–8 hours daily.</li>
+
+            <li>Avoid excessive sugar and junk food.</li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+{% endblock %}

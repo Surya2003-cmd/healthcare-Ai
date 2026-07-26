@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}
+View Patients
+{% endblock %}
+
+{% block page_title %}
+Registered Patients
+{% endblock %}
+
+{% block content %}
+
+<div class="card-box">
+
+<h2>
+
+Registered Patients
+
+</h2>
+
+<hr>
+
+<table class="table table-striped table-bordered">
+
+<thead class="table-primary">
+
+<tr>
+
+<th>ID</th>
+
+<th>Name</th>
+
+<th>Email</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for patient in patients %}
+
+<tr>
+
+<td>{{ patient[0] }}</td>
+
+<td>{{ patient[1] }}</td>
+
+<td>{{ patient[2] }}</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+<a href="/doctor"
+class="btn btn-primary">
+
+Back
+
+</a>
+
+</div>
+
+{% endblock %}

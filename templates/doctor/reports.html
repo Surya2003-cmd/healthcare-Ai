@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% block title %}
+Doctor Reports
+{% endblock %}
+
+{% block page_title %}
+Patient Recommendations
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div class="card-box">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+            <div>
+
+                <h2>
+
+                    <i class="bi bi-file-earmark-medical-fill text-primary"></i>
+
+                    Patient Recommendations
+
+                </h2>
+
+                <p class="text-muted">
+
+                    View all recommendations provided by doctors.
+
+                </p>
+
+            </div>
+
+            <button onclick="window.print()"
+                    class="btn btn-danger">
+
+                <i class="bi bi-printer-fill"></i>
+
+                Print
+
+            </button>
+
+        </div>
+
+        <hr>
+
+        {% if reports %}
+
+        <div class="table-responsive">
+
+            <table class="table table-bordered table-hover table-striped">
+
+                <thead class="table-primary">
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Patient</th>
+
+                        <th>Disease</th>
+
+                        <th>Medicine</th>
+
+                        <th>Diet</th>
+
+                        <th>Physiotherapy</th>
+
+                        <th>Recommendation</th>
+
+                        <th>Date</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                {% for report in reports %}
+
+                    <tr>
+
+                        <td>{{ report[0] }}</td>
+
+                        <td>{{ report[1] }}</td>
+
+                        <td>{{ report[2] }}</td>
+
+                        <td>{{ report[3] }}</td>
+
+                        <td>{{ report[4] }}</td>
+
+                        <td>{{ report[5] }}</td>
+
+                        <td>{{ report[6] }}</td>
+
+                        <td>{{ report[7] }}</td>
+
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        {% else %}
+
+        <div class="alert alert-warning text-center">
+
+            <h4>
+
+                No Recommendations Available
+
+            </h4>
+
+            <p>
+
+                No doctor recommendations have been added yet.
+
+            </p>
+
+        </div>
+
+        {% endif %}
+
+        <hr>
+
+        <div class="text-end">
+
+            <a href="/add_recommendation"
+               class="btn btn-success">
+
+                <i class="bi bi-plus-circle-fill"></i>
+
+                Add Recommendation
+
+            </a>
+
+            <a href="/doctor"
+               class="btn btn-secondary">
+
+                <i class="bi bi-arrow-left-circle-fill"></i>
+
+                Back to Dashboard
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

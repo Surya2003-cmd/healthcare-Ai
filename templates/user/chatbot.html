@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+
+{% block title %}
+AI Healthcare Chatbot
+{% endblock %}
+
+{% block page_title %}
+AI Healthcare Assistant
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-10">
+
+            <div class="card-box">
+
+                <div class="text-center mb-4">
+
+                    <i class="bi bi-robot text-primary"
+                       style="font-size:70px;"></i>
+
+                    <h2 class="mt-3">
+
+                        AI Healthcare Chatbot
+
+                    </h2>
+
+                    <p class="text-muted">
+
+                        Ask any healthcare-related question and receive an AI-powered response.
+
+                    </p>
+
+                </div>
+
+                <!-- Chat Area -->
+
+                <div class="card bg-light p-4 mb-4"
+                     style="min-height:350px;
+                            max-height:450px;
+                            overflow-y:auto;">
+
+                    {% if question %}
+
+                    <div class="text-end mb-3">
+
+                        <span class="badge bg-primary p-3">
+
+                            <i class="bi bi-person-fill"></i>
+
+                            {{ question }}
+
+                        </span>
+
+                    </div>
+
+                    {% endif %}
+
+                    {% if response %}
+
+                    <div class="text-start">
+
+                        <span class="badge bg-success p-3 text-wrap"
+                              style="font-size:15px;
+                                     max-width:100%;">
+
+                            <i class="bi bi-robot"></i>
+
+                            {{ response }}
+
+                        </span>
+
+                    </div>
+
+                    {% else %}
+
+                    <div class="text-center text-muted">
+
+                        <i class="bi bi-chat-dots"
+                           style="font-size:50px;"></i>
+
+                        <br><br>
+
+                        Start a conversation with the AI Assistant.
+
+                    </div>
+
+                    {% endif %}
+
+                </div>
+
+                <!-- Chat Form -->
+
+                <form action="/ask_chatbot" method="POST">
+
+                    <div class="input-group">
+
+                        <input
+                            type="text"
+                            id="chatbotQuestion"
+                            name="question"
+                            class="form-control form-control-lg"
+                            placeholder="Ask your healthcare question..."
+                            required>
+
+                        <button
+                            class="btn btn-primary"
+                            type="submit">
+
+                            <i class="bi bi-send-fill"></i>
+
+                            Send
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+                <div class="alert alert-info mt-3 d-none"
+                     id="chatbotAiSuggestion">
+
+                    AI suggestion will appear here.
+
+                </div>
+
+                <hr>
+
+                <div class="row text-center">
+
+                    <div class="col-md-3">
+
+                        <a href="/predict"
+                           class="btn btn-outline-primary w-100">
+
+                            <i class="bi bi-heart-pulse-fill"></i>
+
+                            Prediction
+
+                        </a>
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <a href="/diet"
+                           class="btn btn-outline-success w-100">
+
+                            <i class="bi bi-cup-hot-fill"></i>
+
+                            Diet
+
+                        </a>
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <a href="/physiotherapy"
+                           class="btn btn-outline-warning w-100">
+
+                            <i class="bi bi-person-walking"></i>
+
+                            Exercise
+
+                        </a>
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <a href="/user"
+                           class="btn btn-outline-secondary w-100">
+
+                            <i class="bi bi-house-fill"></i>
+
+                            Dashboard
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/ai_suggestions.js') }}"></script>
+{% endblock %}

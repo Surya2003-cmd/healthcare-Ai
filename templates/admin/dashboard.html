@@ -1,0 +1,251 @@
+{% extends "base.html" %}
+
+{% block title %}
+Admin Dashboard
+{% endblock %}
+
+{% block page_title %}
+Administrator Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- Welcome -->
+
+    <div class="card-box mb-4">
+
+        <h2>
+
+            Welcome Administrator 👨‍💼
+
+        </h2>
+
+        <p class="text-muted">
+
+            Manage users, doctors, reports and appointments from one place.
+
+        </p>
+
+    </div>
+
+    <div class="row g-4">
+
+        <!-- Users -->
+
+        <div class="col-lg-3">
+
+            <div class="card-box text-center">
+
+                <i class="bi bi-people-fill text-primary"
+                   style="font-size:60px;"></i>
+
+                <h4 class="mt-3">
+
+                    Manage Users
+
+                </h4>
+
+                <p>
+
+                    View all registered users.
+
+                </p>
+
+                <a href="/manage_users"
+                   class="btn btn-primary">
+
+                    Open
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Doctors -->
+
+        <div class="col-lg-3">
+
+            <div class="card-box text-center">
+
+                <i class="bi bi-person-badge-fill text-success"
+                   style="font-size:60px;"></i>
+
+                <h4 class="mt-3">
+
+                    Manage Doctors
+
+                </h4>
+
+                <p>
+
+                    View registered doctors.
+
+                </p>
+
+                <a href="/manage_doctors"
+                   class="btn btn-success">
+
+                    Open
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Reports -->
+
+        <div class="col-lg-3">
+
+            <div class="card-box text-center">
+
+                <i class="bi bi-file-earmark-medical-fill text-danger"
+                   style="font-size:60px;"></i>
+
+                <h4 class="mt-3">
+
+                    View Reports
+
+                </h4>
+
+                <p>
+
+                    Healthcare prediction reports.
+
+                </p>
+
+                <a href="/view_reports"
+                   class="btn btn-danger">
+
+                    Open
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Logout -->
+
+        <div class="col-lg-3">
+
+            <div class="card-box text-center">
+
+                <i class="bi bi-box-arrow-right text-secondary"
+                   style="font-size:60px;"></i>
+
+                <h4 class="mt-3">
+
+                    Logout
+
+                </h4>
+
+                <p>
+
+                    Exit Administrator Portal.
+
+                </p>
+
+                <a href="/logout"
+                   class="btn btn-secondary">
+
+                    Logout
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="card-box">
+
+        <h3>
+
+            <i class="bi bi-speedometer2"></i>
+
+            System Overview
+
+        </h3>
+
+        <hr>
+
+        <div class="row text-center">
+
+            <div class="col-md-3">
+
+                <div class="border rounded p-3">
+
+                    <h2 class="text-primary">
+
+                        {{ users_count if users_count else 0 }}
+
+                    </h2>
+
+                    <p>Registered Users</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="border rounded p-3">
+
+                    <h2 class="text-success">
+
+                        {{ doctors_count if doctors_count else 0 }}
+
+                    </h2>
+
+                    <p>Doctors</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="border rounded p-3">
+
+                    <h2 class="text-warning">
+
+                        {{ reports_count if reports_count else 0 }}
+
+                    </h2>
+
+                    <p>Reports</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="border rounded p-3">
+
+                    <h2 class="text-danger">
+
+                        {{ appointments_count if appointments_count else 0 }}
+
+                    </h2>
+
+                    <p>Appointments</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

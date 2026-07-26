@@ -1,0 +1,538 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+background:#eef3f8;
+
+}
+
+/* Sidebar */
+
+.sidebar{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:260px;
+
+height:100vh;
+
+background:#0d6efd;
+
+padding-top:20px;
+
+box-shadow:2px 0px 10px rgba(0,0,0,.2);
+
+}
+
+.logo{
+
+text-align:center;
+
+color:white;
+
+margin-bottom:20px;
+
+}
+
+.logo i{
+
+font-size:45px;
+
+}
+
+.logo h3{
+
+margin-top:10px;
+
+font-weight:bold;
+
+}
+
+.sidebar a{
+
+display:block;
+
+padding:15px 25px;
+
+color:white;
+
+text-decoration:none;
+
+font-size:16px;
+
+transition:.3s;
+
+}
+
+.sidebar a i{
+
+margin-right:10px;
+
+}
+
+.sidebar a:hover{
+
+background:white;
+
+color:#0d6efd;
+
+border-radius:0 30px 30px 0;
+
+}
+
+/* Main */
+
+.main-content{
+
+margin-left:260px;
+
+}
+
+/* Navbar */
+
+.topbar{
+
+background:white;
+
+padding:18px;
+
+box-shadow:0px 2px 10px rgba(0,0,0,.15);
+
+}
+
+/* Cards */
+
+.card-box{
+
+background:white;
+
+padding:25px;
+
+border-radius:15px;
+
+box-shadow:0px 3px 12px rgba(0,0,0,.15);
+
+transition:.3s;
+
+}
+
+.card-box:hover{
+
+transform:translateY(-5px);
+
+}
+
+.card-icon{
+
+font-size:45px;
+
+color:#0d6efd;
+
+margin-bottom:15px;
+
+}
+
+.btn-primary{
+
+border-radius:30px;
+
+padding:10px 25px;
+
+}
+
+.table{
+
+background:white;
+
+border-radius:15px;
+
+overflow:hidden;
+
+}
+
+.form-control{
+
+border-radius:10px;
+
+}
+
+.form-select{
+
+border-radius:10px;
+
+}
+
+.footer{
+
+margin-top:40px;
+
+text-align:center;
+
+padding:15px;
+
+color:#666;
+
+}
+/* ===========================
+   CHATBOT STYLES
+=========================== */
+
+.chat-box{
+
+background:#f8f9fa;
+
+border-radius:15px;
+
+padding:20px;
+
+}
+
+.user-message{
+
+background:#0d6efd;
+
+color:white;
+
+padding:12px 18px;
+
+border-radius:20px;
+
+display:inline-block;
+
+max-width:75%;
+
+float:right;
+
+margin-bottom:15px;
+
+}
+
+.bot-message{
+
+background:#198754;
+
+color:white;
+
+padding:12px 18px;
+
+border-radius:20px;
+
+display:inline-block;
+
+max-width:75%;
+
+margin-bottom:15px;
+
+}
+
+.input-group input{
+
+border-radius:30px 0 0 30px;
+
+}
+
+.input-group button{
+
+border-radius:0 30px 30px 0;
+
+}
+/* ==============================
+   DIET PAGE
+============================== */
+
+.card-box{
+
+background:#ffffff;
+
+border-radius:15px;
+
+padding:25px;
+
+box-shadow:0px 3px 10px rgba(0,0,0,0.12);
+
+margin-bottom:20px;
+
+}
+
+.card-box h2,
+.card-box h3{
+
+font-weight:600;
+
+}
+
+.card-box ul{
+
+padding-left:20px;
+
+}
+
+.card-box li{
+
+margin-bottom:10px;
+
+font-size:16px;
+
+}
+
+pre{
+
+background:#f8f9fa;
+
+padding:15px;
+
+border-radius:10px;
+
+}
+/* ===========================
+   PHYSIOTHERAPY PAGE
+=========================== */
+
+.exercise-card{
+
+background:#ffffff;
+
+border-radius:15px;
+
+padding:25px;
+
+box-shadow:0px 4px 12px rgba(0,0,0,0.15);
+
+margin-bottom:20px;
+
+}
+
+.exercise-card h3{
+
+color:#0d6efd;
+
+font-weight:600;
+
+}
+
+.exercise-card ul{
+
+padding-left:20px;
+
+}
+
+.exercise-card li{
+
+margin-bottom:10px;
+
+font-size:16px;
+
+}
+
+.exercise-card pre{
+
+background:#f8f9fa;
+
+padding:15px;
+
+border-radius:10px;
+
+border-left:5px solid #0d6efd;
+
+}
+/* ==========================
+   APPOINTMENT PAGE
+========================== */
+
+.appointment-card{
+
+background:#ffffff;
+
+padding:25px;
+
+border-radius:15px;
+
+box-shadow:0px 4px 12px rgba(0,0,0,.15);
+
+margin-bottom:20px;
+
+}
+
+.appointment-card h2{
+
+color:#0d6efd;
+
+font-weight:600;
+
+}
+
+.appointment-card ul{
+
+padding-left:20px;
+
+}
+
+.appointment-card li{
+
+margin-bottom:10px;
+
+}
+
+.table{
+
+border-radius:10px;
+
+overflow:hidden;
+
+}
+
+.alert{
+
+border-radius:12px;
+
+}
+/* ===========================
+   REPORT PAGE
+=========================== */
+
+.report-card{
+
+background:#ffffff;
+
+padding:25px;
+
+border-radius:15px;
+
+box-shadow:0px 5px 15px rgba(0,0,0,.15);
+
+margin-bottom:20px;
+
+}
+
+.report-card table{
+
+margin-top:20px;
+
+}
+
+.report-card h2{
+
+font-weight:600;
+
+color:#0d6efd;
+
+}
+
+.report-card ul{
+
+padding-left:20px;
+
+}
+
+.report-card li{
+
+margin-bottom:10px;
+
+}
+
+@media print{
+
+.sidebar,
+.topbar,
+.btn{
+
+display:none;
+
+}
+
+.main-content{
+
+margin-left:0;
+
+}
+
+body{
+
+background:white;
+
+}
+
+}
+/* ==========================
+   DOCTOR RECOMMENDATION
+========================== */
+
+textarea{
+
+resize:none;
+
+}
+
+.form-label{
+
+font-weight:600;
+
+}
+
+.card-box{
+
+background:#ffffff;
+
+border-radius:15px;
+
+padding:25px;
+
+box-shadow:0 4px 12px rgba(0,0,0,.12);
+
+}
+/* ===========================
+   DOCTOR REPORTS
+=========================== */
+
+.table th{
+
+text-align:center;
+
+vertical-align:middle;
+
+}
+
+.table td{
+
+vertical-align:middle;
+
+}
+
+.table-responsive{
+
+overflow-x:auto;
+
+}
+
+@media print{
+
+.sidebar,
+.topbar,
+.btn{
+
+display:none;
+
+}
+
+.main-content{
+
+margin-left:0;
+
+}
+
+body{
+
+background:white;
+
+}
+
+}
